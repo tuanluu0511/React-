@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styles from './App.module.css';
 import AddUser from './components/User/UserInput/AddUser';
 import UserLists from './components/User/UserLists/UserLists';
 
@@ -15,7 +14,7 @@ function App() {
   };
 
   return (
-    <div className={styles.body}>
+    <div>
       <AddUser onAddUser={addUserHandler} />
       <UserLists users={inputUser} />
     </div>
