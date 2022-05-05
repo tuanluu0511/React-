@@ -1,6 +1,12 @@
+// import { useContext } from 'react';
+
 import classes from './CartItem.module.css';
 
+// import CartContext from '../../store/cart-context';
+
 const CartItem = (props) => {
+  // const cartCtx = useContext(CartContext);
+
   const price = `$${props.price.toFixed(2)}`;
 
   return (
