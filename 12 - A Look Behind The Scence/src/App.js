@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      <DemoOutput show={showParagraph}></DemoOutput>
+      <DemoOutput show={false}></DemoOutput>
       <Button onClick={toggleTextHandler}>Toggle Paragraph</Button>
     </div>
   );
