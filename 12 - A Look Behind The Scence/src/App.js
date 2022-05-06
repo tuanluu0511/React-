@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from './components/UI/Button/Button';
+import DemoOutput from './components/DemoOutput/DemoOutput';
 
 import './App.css';
 
@@ -11,7 +12,7 @@ function App() {
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      {showParagraph && <p>This is Toggle Text</p>}
+      <DemoOutput show={showParagraph}></DemoOutput>
       <Button onClick={toggleTextHandler}>Toggle Paragraph</Button>
     </div>
   );
