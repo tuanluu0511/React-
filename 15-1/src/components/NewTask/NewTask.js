@@ -11,16 +11,13 @@ const NewTask = (props) => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(
-        'https://react-http-6b4a6.firebaseio.com/tasks.json',
-        {
-          method: 'POST',
-          body: JSON.stringify({ text: taskText }),
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+      const response = await fetch('https://react-http-d638f-default-rtdb.asia-southeast1.firebasedatabase.app/tasks.json', {
+        method: 'POST',
+        body: JSON.stringify({ text: taskText }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
       if (!response.ok) {
         throw new Error('Request failed!');
