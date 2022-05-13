@@ -27,9 +27,4 @@ const counterSubscribe = () => {
 
 store.subscribe(counterSubscribe);
 
-setInterval(() => {
-  store.dispatch({ type: 'increment' });
-  store.dispatch({ type: 'decrement' });
-}, 1000);
-
 export default store;
