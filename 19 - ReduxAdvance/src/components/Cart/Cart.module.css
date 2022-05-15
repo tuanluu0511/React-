@@ -14,3 +14,8 @@
   padding: 0;
   margin: 0;
 }
+
+.total span {
+  margin-right: 2rem;
+  font-size: 1.5rem;
+}
