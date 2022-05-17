@@ -2,6 +2,7 @@ import { useParams, Route } from 'react-router-dom';
 import { Fragment } from 'react';
 
 import HighlightedQuote from '../components/quotes/HighlightedQuote';
+import NoQuotesFound from '../components/quotes/NoQuotesFound';
 import Comments from '../components/comments/Comments';
 
 const DUMMY_QUOTES = [
@@ -23,7 +24,7 @@ const QuoteDetail = () => {
   const quote = DUMMY_QUOTES.find((quote) => quote.id === params.quoteId);
 
   if (!quote) {
-    return <p>No quote found!</p>;
+    return <NoQuotesFound />;
   }
 
   return (
