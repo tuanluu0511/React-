@@ -61,7 +61,8 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken);
+        const remainingTime = new Date(new Date().getTime() + +data.expiresIn * 1000);
+        authCtx.login(data.idToken, remainingTime.toISOString());
         history.replace('/');
       })
       .catch((err) => {
