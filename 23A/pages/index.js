@@ -28,14 +28,26 @@ function Homepage(props) {
   return <MeetupList meetups={props.meetups} />;
 }
 
-//Only can execute in the page component files
-export async function getStaticProps() {
-  //fetch data from API
+export async function getServerSideProps(context) {
+  const req = context.req;
+  const res = context.res;
+  //fet data from API
   return {
     props: {
       meetups: DUMMY_MEETUPS,
     },
   };
 }
+
+//Only can execute in the page component files
+// export async function getStaticProps() {
+//   //fetch data from API
+//   return {
+//     props: {
+//       meetups: DUMMY_MEETUPS,
+//     },
+//     revalidate: 3600, //re-generated every hour
+//   };
+// }
 
 export default Homepage;
