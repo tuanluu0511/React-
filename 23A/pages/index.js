@@ -1,6 +1,6 @@
 import MeetupList from '../components/meetups/MeetupList';
 
-const DUMMY_MEETUP = [
+const DUMMY_MEETUPS = [
   {
     id: 'm1',
     title: ' The First Meetup',
@@ -17,8 +17,25 @@ const DUMMY_MEETUP = [
   },
 ];
 
-function Homepage() {
-  return <MeetupList meetups={DUMMY_MEETUP} />;
+function Homepage(props) {
+  // const [loadedMeetups, setLoadedMeetup] = useState([]);
+  //useEffect is run after the Component has executed by nextJS, in the second render cycle, in the browser, therefor page content will empty and not suitable for SEO. We will getStaticProps instead to load server data in build time.
+  // useEffect(() => {
+  //   //Send http request and fetch data
+  //   setLoadedMeetup(DUMMY_MEETUP);
+  // }, []);
+
+  return <MeetupList meetups={props.meetups} />;
+}
+
+//Only can execute in the page component files
+export async function getStaticProps() {
+  //fetch data from API
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
+  };
 }
 
 export default Homepage;
